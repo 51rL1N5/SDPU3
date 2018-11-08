@@ -49,3 +49,4 @@ set_global_assignment -name QIP_FILE components/lpm_shiftreg_SPI.qip
 set_global_assignment -name QIP_FILE components/lpm_counter_SPI.qip
 set_global_assignment -name QIP_FILE components/lpm_shiftreg_SENSOR1.qip
 set_global_assignment -name QIP_FILE components/lpm_shiftreg_SENSOR1_SINCRONIZADOR_1.qip
+set_global_assignment -name BDF_FILE Secador.bdf
