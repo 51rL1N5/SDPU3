@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Secador
-Thu Nov  8 08:02:03 2018
+Thu Nov  8 16:34:52 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Nov  8 08:02:03 2018 ;
+; EDA Netlist Writer Status ; Successful - Thu Nov  8 16:34:52 2018 ;
 ; Revision Name             ; Secador                               ;
 ; Top-level Entity Name     ; Secador                               ;
 ; Family                    ; Cyclone II                            ;
@@ -44,38 +44,34 @@ applicable agreement for further details.
 +---------------------------+---------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                        ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Option                                                                                            ; Setting                ;
-+---------------------------------------------------------------------------------------------------+------------------------+
-; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
-; Generate netlist for functional simulation only                                                   ; Off                    ;
-; Time scale                                                                                        ; 1 ps                   ;
-; Truncate long hierarchy paths                                                                     ; Off                    ;
-; Map illegal HDL characters                                                                        ; Off                    ;
-; Flatten buses into individual nodes                                                               ; Off                    ;
-; Maintain hierarchy                                                                                ; Off                    ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                    ;
-; Enable glitch filtering                                                                           ; Off                    ;
-; Do not write top level VHDL entity                                                                ; Off                    ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                    ;
-; Architecture name in VHDL output netlist                                                          ; structure              ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                    ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                    ;
-+---------------------------------------------------------------------------------------------------+------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                           ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Option                                                                                            ; Setting                   ;
++---------------------------------------------------------------------------------------------------+---------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
+; Generate netlist for functional simulation only                                                   ; On                        ;
+; Truncate long hierarchy paths                                                                     ; Off                       ;
+; Map illegal HDL characters                                                                        ; Off                       ;
+; Flatten buses into individual nodes                                                               ; Off                       ;
+; Maintain hierarchy                                                                                ; Off                       ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                       ;
+; Enable glitch filtering                                                                           ; Off                       ;
+; Do not write top level VHDL entity                                                                ; Off                       ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                       ;
+; Architecture name in VHDL output netlist                                                          ; structure                 ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                       ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                       ;
++---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------+
-; Simulation Generated Files                                                 ;
-+----------------------------------------------------------------------------+
-; Generated Files                                                            ;
-+----------------------------------------------------------------------------+
-; /home/lnsnow/workspace/SDPU3/fpga/simulation/modelsim/Secador.vho          ;
-; /home/lnsnow/workspace/SDPU3/fpga/simulation/modelsim/Secador_fast.vho     ;
-; /home/lnsnow/workspace/SDPU3/fpga/simulation/modelsim/Secador_vhd.sdo      ;
-; /home/lnsnow/workspace/SDPU3/fpga/simulation/modelsim/Secador_vhd_fast.sdo ;
-+----------------------------------------------------------------------------+
++------------------------------------------------------------------+
+; Simulation Generated Files                                       ;
++------------------------------------------------------------------+
+; Generated Files                                                  ;
++------------------------------------------------------------------+
+; /home/lnsnow/workspace/SDPU3/fpga/simulation/modelsim/Secador.vo ;
++------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -84,12 +80,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Thu Nov  8 08:02:03 2018
-Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Secador -c Secador
-Info (204026): Generated files "Secador.vho", "Secador_fast.vho", "Secador_vhd.sdo" and "Secador_vhd_fast.sdo" in directory "/home/lnsnow/workspace/SDPU3/fpga/simulation/modelsim/" for EDA simulation tool
+    Info: Processing started: Thu Nov  8 16:34:51 2018
+Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog Secador -c Secador
+Info (204019): Generated file Secador.vo in folder "/home/lnsnow/workspace/SDPU3/fpga/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 803 megabytes
-    Info: Processing ended: Thu Nov  8 08:02:04 2018
+    Info: Peak virtual memory: 805 megabytes
+    Info: Processing ended: Thu Nov  8 16:34:52 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

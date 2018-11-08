@@ -1,6 +1,8 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="Secador">
-		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|lpm_counter_SPI:inst2|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_g3i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|lpm_counter_CONTADOR_GLOBAL_MS:inst5|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_c4i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|lpm_counter_SPI_STATE_RECEIVE:inst7|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_o2i.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|lpm_counter_TIMER_GLOBAL:inst1|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_e6j.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
