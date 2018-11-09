@@ -33,7 +33,7 @@
 --applicable agreement for further details.
 
 
---altfp_mult CBX_AUTO_BLACKBOX="ALL" DEDICATED_MULTIPLIER_CIRCUITRY="YES" DENORMAL_SUPPORT="NO" DEVICE_FAMILY="Cyclone II" EXCEPTION_HANDLING="NO" PIPELINE=11 REDUCED_FUNCTIONALITY="NO" ROUNDING="TO_NEAREST" WIDTH_EXP=8 WIDTH_MAN=23 clock dataa datab result
+--altfp_mult CBX_AUTO_BLACKBOX="ALL" DEDICATED_MULTIPLIER_CIRCUITRY="NO" DENORMAL_SUPPORT="NO" DEVICE_FAMILY="Cyclone II" EXCEPTION_HANDLING="NO" PIPELINE=11 REDUCED_FUNCTIONALITY="NO" ROUNDING="TO_NEAREST" WIDTH_EXP=8 WIDTH_MAN=23 clock dataa datab result
 --VERSION_BEGIN 13.0 cbx_alt_ded_mult_y 2013:04:24:18:05:29:SJ cbx_altbarrel_shift 2013:04:24:18:05:29:SJ cbx_altera_mult_add 2013:04:24:18:05:29:SJ cbx_altera_mult_add_rtl 2013:04:24:18:05:29:SJ cbx_altfp_mult 2013:04:24:18:05:29:SJ cbx_altmult_add 2013:04:24:18:05:29:SJ cbx_cycloneii 2013:04:24:18:05:30:SJ cbx_lpm_add_sub 2013:04:24:18:05:30:SJ cbx_lpm_compare 2013:04:24:18:05:30:SJ cbx_lpm_mult 2013:04:24:18:05:30:SJ cbx_mgl 2013:04:24:18:40:34:SJ cbx_padd 2013:04:24:18:05:30:SJ cbx_parallel_add 2013:04:24:18:05:30:SJ cbx_stratix 2013:04:24:18:05:30:SJ cbx_stratixii 2013:04:24:18:05:30:SJ cbx_util_mgl 2013:04:24:18:05:30:SJ  VERSION_END
 
  LIBRARY lpm;
@@ -43,7 +43,7 @@
  LIBRARY ieee;
  USE ieee.std_logic_1164.all;
 
- ENTITY  altfp_mult_ADJUSTING_DATA_altfp_mult_oon IS 
+ ENTITY  altfp_mult_ADJUSTING_DATA_altfp_mult_4ln IS 
 	 PORT 
 	 ( 
 		 clock	:	IN  STD_LOGIC;
@@ -51,9 +51,9 @@
 		 datab	:	IN  STD_LOGIC_VECTOR (31 DOWNTO 0);
 		 result	:	OUT  STD_LOGIC_VECTOR (31 DOWNTO 0)
 	 ); 
- END altfp_mult_ADJUSTING_DATA_altfp_mult_oon;
+ END altfp_mult_ADJUSTING_DATA_altfp_mult_4ln;
 
- ARCHITECTURE RTL OF altfp_mult_ADJUSTING_DATA_altfp_mult_oon IS
+ ARCHITECTURE RTL OF altfp_mult_ADJUSTING_DATA_altfp_mult_4ln IS
 
 	 SIGNAL	 dataa_exp_all_one_ff_p1	:	STD_LOGIC
 	 -- synopsys translate_off
@@ -1888,7 +1888,7 @@
 		LPM_WIDTHB => 24,
 		LPM_WIDTHP => 48,
 		LPM_WIDTHS => 1,
-		lpm_hint => "DEDICATED_MULTIPLIER_CIRCUITRY=YES"
+		lpm_hint => "DEDICATED_MULTIPLIER_CIRCUITRY=NO"
 	  )
 	  PORT MAP ( 
 		aclr => aclr,
@@ -1899,7 +1899,7 @@
 		result => wire_man_product2_mult_result
 	  );
 
- END RTL; --altfp_mult_ADJUSTING_DATA_altfp_mult_oon
+ END RTL; --altfp_mult_ADJUSTING_DATA_altfp_mult_4ln
 --VALID FILE
 
 
@@ -1923,7 +1923,7 @@ ARCHITECTURE RTL OF altfp_mult_adjusting_data IS
 
 
 
-	COMPONENT altfp_mult_ADJUSTING_DATA_altfp_mult_oon
+	COMPONENT altfp_mult_ADJUSTING_DATA_altfp_mult_4ln
 	PORT (
 			clock	: IN STD_LOGIC ;
 			dataa	: IN STD_LOGIC_VECTOR (31 DOWNTO 0);
@@ -1935,7 +1935,7 @@ ARCHITECTURE RTL OF altfp_mult_adjusting_data IS
 BEGIN
 	result    <= sub_wire0(31 DOWNTO 0);
 
-	altfp_mult_ADJUSTING_DATA_altfp_mult_oon_component : altfp_mult_ADJUSTING_DATA_altfp_mult_oon
+	altfp_mult_ADJUSTING_DATA_altfp_mult_4ln_component : altfp_mult_ADJUSTING_DATA_altfp_mult_4ln
 	PORT MAP (
 		clock => clock,
 		dataa => dataa,
@@ -1953,7 +1953,7 @@ END RTL;
 -- Retrieval info: LIBRARY: altera_mf altera_mf.altera_mf_components.all
 -- Retrieval info: PRIVATE: FPM_FORMAT STRING "Single"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
--- Retrieval info: CONSTANT: DEDICATED_MULTIPLIER_CIRCUITRY STRING "YES"
+-- Retrieval info: CONSTANT: DEDICATED_MULTIPLIER_CIRCUITRY STRING "NO"
 -- Retrieval info: CONSTANT: DENORMAL_SUPPORT STRING "NO"
 -- Retrieval info: CONSTANT: EXCEPTION_HANDLING STRING "NO"
 -- Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "UNUSED"
@@ -1974,7 +1974,7 @@ END RTL;
 -- Retrieval info: CONNECT: result 0 0 32 0 @result 0 0 32 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL altfp_mult_ADJUSTING_DATA.vhd TRUE FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL altfp_mult_ADJUSTING_DATA.qip TRUE FALSE
--- Retrieval info: GEN_FILE: TYPE_NORMAL altfp_mult_ADJUSTING_DATA.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL altfp_mult_ADJUSTING_DATA.bsf TRUE TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL altfp_mult_ADJUSTING_DATA_inst.vhd TRUE TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL altfp_mult_ADJUSTING_DATA.inc TRUE TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL altfp_mult_ADJUSTING_DATA.cmp TRUE TRUE

@@ -1,5 +1,5 @@
 Flow report for Secador
-Thu Nov  8 23:49:47 2018
+Fri Nov  9 10:58:40 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Thu Nov  8 23:49:47 2018      ;
+; Flow Status                        ; Successful - Fri Nov  9 10:58:40 2018      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; Secador                                    ;
 ; Top-level Entity Name              ; Secador                                    ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/08/2018 23:49:27 ;
+; Start date & time ; 11/09/2018 10:58:14 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Secador             ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+-----------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                               ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+-----------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.154173176717525                                   ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 0.154177189414137                                   ; --            ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                  ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                         ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                           ; <None>        ; --          ; --             ;
@@ -98,6 +98,20 @@ applicable agreement for further details.
 ; IP_TOOL_NAME                        ; ROM: 1-PORT                                         ; --            ; --          ; --             ;
 ; IP_TOOL_NAME                        ; ROM: 1-PORT                                         ; --            ; --          ; --             ;
 ; IP_TOOL_NAME                        ; ROM: 1-PORT                                         ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_COUNTER                                         ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_CONSTANT                                        ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_CONSTANT                                        ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_CONSTANT                                        ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_CONSTANT                                        ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_CONSTANT                                        ; --            ; --          ; --             ;
+; IP_TOOL_NAME                        ; LPM_CONSTANT                                        ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.0                                                ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.0                                                ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.0                                                ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.0                                                ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.0                                                ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.0                                                ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                     ; 13.0                                                ; --            ; --          ; --             ;
 ; IP_TOOL_VERSION                     ; 13.0                                                ; --            ; --          ; --             ;
 ; IP_TOOL_VERSION                     ; 13.0                                                ; --            ; --          ; --             ;
 ; IP_TOOL_VERSION                     ; 13.0                                                ; --            ; --          ; --             ;
@@ -159,6 +173,20 @@ applicable agreement for further details.
 ; MISC_FILE                           ; components/romAng.cmp                               ; --            ; --          ; --             ;
 ; MISC_FILE                           ; components/romLin.bsf                               ; --            ; --          ; --             ;
 ; MISC_FILE                           ; components/romLin.cmp                               ; --            ; --          ; --             ;
+; MISC_FILE                           ; waveforms/lpm_counter_DIVFREQ11.bsf                 ; --            ; --          ; --             ;
+; MISC_FILE                           ; waveforms/lpm_counter_DIVFREQ11.cmp                 ; --            ; --          ; --             ;
+; MISC_FILE                           ; INTERVAL0.bsf                                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; INTERVAL0.cmp                                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; INTERVAL1.bsf                                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; INTERVAL1.cmp                                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; INTERVAL2.bsf                                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; INTERVAL2.cmp                                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; INTERVAL3.bsf                                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; INTERVAL3.cmp                                       ; --            ; --          ; --             ;
+; MISC_FILE                           ; ALPHA_TIMES_VREF_ADJUST.bsf                         ; --            ; --          ; --             ;
+; MISC_FILE                           ; ALPHA_TIMES_VREF_ADJUST.cmp                         ; --            ; --          ; --             ;
+; MISC_FILE                           ; BETA_TIMES_VREF_ADJUST.bsf                          ; --            ; --          ; --             ;
+; MISC_FILE                           ; BETA_TIMES_VREF_ADJUST.cmp                          ; --            ; --          ; --             ;
 ; PARTITION_COLOR                     ; 16764057                                            ; --            ; --          ; Top            ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                               ; --            ; --          ; Top            ;
 ; PARTITION_NETLIST_TYPE              ; SOURCE                                              ; --            ; --          ; Top            ;
@@ -171,26 +199,26 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 689 MB              ; 00:00:04                           ;
-; Fitter                    ; 00:00:05     ; 1.0                     ; 724 MB              ; 00:00:05                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 550 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 500 MB              ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 788 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:12                           ;
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 706 MB              ; 00:00:05                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 720 MB              ; 00:00:07                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 557 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 506 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 794 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:16     ; --                      ; --                  ; 00:00:16                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                             ;
-+---------------------------+------------------+----------------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+---------------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis      ; Vulcan           ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
-; Fitter                    ; Vulcan           ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
-; Assembler                 ; Vulcan           ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
-; TimeQuest Timing Analyzer ; Vulcan           ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
-; EDA Netlist Writer        ; Vulcan           ; Ubuntu 16.04.5 ; 16         ; x86_64         ;
-+---------------------------+------------------+----------------+------------+----------------+
++-----------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                               ;
++---------------------------+------------------+------------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name          ; OS Version ; Processor type ;
++---------------------------+------------------+------------------+------------+----------------+
+; Analysis & Synthesis      ; mercury          ; Debian GNU/Linux ; 9          ; x86_64         ;
+; Fitter                    ; mercury          ; Debian GNU/Linux ; 9          ; x86_64         ;
+; Assembler                 ; mercury          ; Debian GNU/Linux ; 9          ; x86_64         ;
+; TimeQuest Timing Analyzer ; mercury          ; Debian GNU/Linux ; 9          ; x86_64         ;
+; EDA Netlist Writer        ; mercury          ; Debian GNU/Linux ; 9          ; x86_64         ;
++---------------------------+------------------+------------------+------------+----------------+
 
 
 ------------

@@ -78,5 +78,13 @@ set_global_assignment -name QIP_FILE components/romB.qip
 set_global_assignment -name QIP_FILE components/romAng.qip
 set_global_assignment -name QIP_FILE components/romLin.qip
 set_global_assignment -name VECTOR_WAVEFORM_FILE waveforms/Z.vwf
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE /home/linksnow/workspace/SD/SDPU3/fpga/waveforms/Z.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE waveforms/TIMER.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE /home/lnsnow/workspace/SDPU3/fpga/waveforms/TIMER.vwf
+set_global_assignment -name QIP_FILE waveforms/lpm_counter_DIVFREQ11.qip
+set_global_assignment -name QIP_FILE INTERVAL0.qip
+set_global_assignment -name QIP_FILE INTERVAL1.qip
+set_global_assignment -name QIP_FILE INTERVAL2.qip
+set_global_assignment -name QIP_FILE INTERVAL3.qip
+set_global_assignment -name QIP_FILE ALPHA_TIMES_VREF_ADJUST.qip
+set_global_assignment -name QIP_FILE BETA_TIMES_VREF_ADJUST.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
