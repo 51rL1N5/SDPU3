@@ -1,0 +1,12 @@
+DEPTH =           5;
+WIDTH =          32;
+ADDRESS_RADIX = BIN;
+DATA_RADIX =    HEX;
+CONTENT
+BEGIN
+000 : 00000000;
+001 : 3eb33333;
+010 : bf666666;
+011 : 3f266666;
+100 : 4079999a;
+end;

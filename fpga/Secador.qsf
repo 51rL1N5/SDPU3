@@ -53,9 +53,6 @@ set_global_assignment -name BDF_FILE Secador.bdf
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name DEVICE_FILTER_PIN_COUNT 672
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_global_assignment -name VECTOR_OUTPUT_FORMAT VWF
 set_global_assignment -name QIP_FILE lpm_counter_TIMER_GLOBAL.qip
@@ -65,5 +62,21 @@ set_global_assignment -name QIP_FILE waveforms/lpm_counter_SPI_0_TO_2.qip
 set_global_assignment -name QIP_FILE waveforms/lpm_shiftreg_SPI_TRANSITION_STATE.qip
 set_global_assignment -name QIP_FILE waveforms/lpm_counter_SPI_STATE_RECEIVE.qip
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
+set_global_assignment -name QIP_FILE altfp_convert_INT_TO_FP.qip
+set_global_assignment -name QIP_FILE altfp_mult_ADJUSTING_DATA.qip
+set_global_assignment -name QIP_FILE altfp_compare_Z.qip
+set_global_assignment -name VHDL_FILE components/decoderZ.vhd
+set_global_assignment -name QIP_FILE components/lpm_mux_DECODER_Z.qip
+set_global_assignment -name QIP_FILE components/altfp_add_sub_Z.qip
+set_global_assignment -name VHDL_FILE altfp_compare_Z.vhd
+set_global_assignment -name QIP_FILE components/altfp_compare_Z_T.qip
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name QIP_FILE components/romA.qip
+set_global_assignment -name QIP_FILE components/romB.qip
+set_global_assignment -name QIP_FILE components/romAng.qip
+set_global_assignment -name QIP_FILE components/romLin.qip
+set_global_assignment -name VECTOR_WAVEFORM_FILE waveforms/Z.vwf
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE /home/linksnow/workspace/SD/SDPU3/fpga/waveforms/Z.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE /home/lnsnow/workspace/SDPU3/fpga/waveforms/SPI.vwf
