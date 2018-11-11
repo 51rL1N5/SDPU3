@@ -42,16 +42,15 @@ USE lpm.all;
 ENTITY lpm_counter_CONTADOR_GLOBAL_MS IS
 	PORT
 	(
-		aclr		: IN STD_LOGIC ;
 		clock		: IN STD_LOGIC ;
-		q		: OUT STD_LOGIC_VECTOR (14 DOWNTO 0)
+		q		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 	);
 END lpm_counter_CONTADOR_GLOBAL_MS;
 
 
 ARCHITECTURE SYN OF lpm_counter_contador_global_ms IS
 
-	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (14 DOWNTO 0);
+	SIGNAL sub_wire0	: STD_LOGIC_VECTOR (31 DOWNTO 0);
 
 
 
@@ -63,24 +62,22 @@ ARCHITECTURE SYN OF lpm_counter_contador_global_ms IS
 		lpm_width		: NATURAL
 	);
 	PORT (
-			aclr	: IN STD_LOGIC ;
 			clock	: IN STD_LOGIC ;
-			q	: OUT STD_LOGIC_VECTOR (14 DOWNTO 0)
+			q	: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 	);
 	END COMPONENT;
 
 BEGIN
-	q    <= sub_wire0(14 DOWNTO 0);
+	q    <= sub_wire0(31 DOWNTO 0);
 
 	LPM_COUNTER_component : LPM_COUNTER
 	GENERIC MAP (
 		lpm_direction => "UP",
 		lpm_port_updown => "PORT_UNUSED",
 		lpm_type => "LPM_COUNTER",
-		lpm_width => 15
+		lpm_width => 32
 	)
 	PORT MAP (
-		aclr => aclr,
 		clock => clock,
 		q => sub_wire0
 	);
@@ -92,7 +89,7 @@ END SYN;
 -- ============================================================
 -- CNX file retrieval info
 -- ============================================================
--- Retrieval info: PRIVATE: ACLR NUMERIC "1"
+-- Retrieval info: PRIVATE: ACLR NUMERIC "0"
 -- Retrieval info: PRIVATE: ALOAD NUMERIC "0"
 -- Retrieval info: PRIVATE: ASET NUMERIC "0"
 -- Retrieval info: PRIVATE: ASET_ALL1 NUMERIC "1"
@@ -109,22 +106,20 @@ END SYN;
 -- Retrieval info: PRIVATE: SSET NUMERIC "0"
 -- Retrieval info: PRIVATE: SSET_ALL1 NUMERIC "1"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
--- Retrieval info: PRIVATE: nBit NUMERIC "15"
+-- Retrieval info: PRIVATE: nBit NUMERIC "32"
 -- Retrieval info: PRIVATE: new_diagram STRING "1"
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
 -- Retrieval info: CONSTANT: LPM_DIRECTION STRING "UP"
 -- Retrieval info: CONSTANT: LPM_PORT_UPDOWN STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COUNTER"
--- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "15"
--- Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT NODEFVAL "aclr"
+-- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "32"
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
--- Retrieval info: USED_PORT: q 0 0 15 0 OUTPUT NODEFVAL "q[14..0]"
--- Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
+-- Retrieval info: USED_PORT: q 0 0 32 0 OUTPUT NODEFVAL "q[31..0]"
 -- Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
--- Retrieval info: CONNECT: q 0 0 15 0 @q 0 0 15 0
+-- Retrieval info: CONNECT: q 0 0 32 0 @q 0 0 32 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_CONTADOR_GLOBAL_MS.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_CONTADOR_GLOBAL_MS.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_CONTADOR_GLOBAL_MS.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_CONTADOR_GLOBAL_MS.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_CONTADOR_GLOBAL_MS.bsf TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_CONTADOR_GLOBAL_MS_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: lpm

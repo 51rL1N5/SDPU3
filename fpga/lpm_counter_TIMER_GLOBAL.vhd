@@ -123,6 +123,6 @@ END SYN;
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_TIMER_GLOBAL.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_TIMER_GLOBAL.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_TIMER_GLOBAL.cmp TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_TIMER_GLOBAL.bsf TRUE FALSE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_TIMER_GLOBAL.bsf TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_TIMER_GLOBAL_inst.vhd FALSE
 -- Retrieval info: LIB_FILE: lpm

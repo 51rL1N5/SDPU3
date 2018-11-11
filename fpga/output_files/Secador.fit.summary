@@ -1,16 +1,16 @@
-Fitter Status : Successful - Fri Nov  9 16:11:16 2018
+Fitter Status : Successful - Sat Nov 10 17:18:31 2018
 Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
 Revision Name : Secador
 Top-level Entity Name : Secador
 Family : Cyclone II
 Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 0 / 33,216 ( 0 % )
-    Total combinational functions : 0 / 33,216 ( 0 % )
-    Dedicated logic registers : 0 / 33,216 ( 0 % )
-Total registers : 0
-Total pins : 4 / 475 ( < 1 % )
+Total logic elements : 4,751 / 33,216 ( 14 % )
+    Total combinational functions : 4,380 / 33,216 ( 13 % )
+    Dedicated logic registers : 2,939 / 33,216 ( 9 % )
+Total registers : 2939
+Total pins : 36 / 475 ( 8 % )
 Total virtual pins : 0
-Total memory bits : 0 / 483,840 ( 0 % )
+Total memory bits : 607 / 483,840 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )
 Total PLLs : 0 / 4 ( 0 % )
