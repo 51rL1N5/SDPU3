@@ -31,11 +31,25 @@ applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
-		(pt 144 56)
+		(pt 0 48)
+		(input)
+		(text "clk_en" (rect 0 0 38 12)(font "Arial" (font_size 8)))
+		(text "clk_en" (rect 20 42 53 53)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 80 80)
+		(input)
+		(text "aclr" (rect 0 0 12 22)(font "Arial" (font_size 8))(vertical))
+		(text "aclr" (rect 74 40 85 59)(font "Arial" (font_size 8))(vertical))
+		(line (pt 80 80)(pt 80 64))
+	)
+	(port
+		(pt 144 40)
 		(output)
 		(text "q[15..0]" (rect 0 0 44 12)(font "Arial" (font_size 8)))
-		(text "q[15..0]" (rect 88 50 125 61)(font "Arial" (font_size 8)))
-		(line (pt 144 56)(pt 128 56)(line_width 3))
+		(text "q[15..0]" (rect 88 34 125 45)(font "Arial" (font_size 8)))
+		(line (pt 144 40)(pt 128 40)(line_width 3))
 	)
 	(drawing
 		(text "modulus 50000" (rect 67 31 198 71)(font "Arial" ))

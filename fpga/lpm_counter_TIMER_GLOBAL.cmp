@@ -16,6 +16,8 @@
 component lpm_counter_TIMER_GLOBAL
 	PORT
 	(
+		aclr		: IN STD_LOGIC ;
+		clk_en		: IN STD_LOGIC ;
 		clock		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
 	);

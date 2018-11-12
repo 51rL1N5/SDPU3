@@ -33,27 +33,27 @@
 --applicable agreement for further details.
 
 
---lpm_constant CBX_AUTO_BLACKBOX="ALL" ENABLE_RUNTIME_MOD="NO" LPM_CVALUE=3A800000 LPM_WIDTH=32 result
+--lpm_constant CBX_AUTO_BLACKBOX="ALL" ENABLE_RUNTIME_MOD="NO" LPM_CVALUE=3C257EB5 LPM_WIDTH=32 result
 --VERSION_BEGIN 13.0 cbx_lpm_constant 2013:04:24:18:05:30:SJ cbx_mgl 2013:04:24:18:40:34:SJ  VERSION_END
 
 --synthesis_resources = 
  LIBRARY ieee;
  USE ieee.std_logic_1164.all;
 
- ENTITY  BETA_TIMES_VREF_ADJUST_lpm_constant_n29 IS 
+ ENTITY  BETA_TIMES_VREF_ADJUST_lpm_constant_b69 IS 
 	 PORT 
 	 ( 
 		 result	:	OUT  STD_LOGIC_VECTOR (31 DOWNTO 0)
 	 ); 
- END BETA_TIMES_VREF_ADJUST_lpm_constant_n29;
+ END BETA_TIMES_VREF_ADJUST_lpm_constant_b69;
 
- ARCHITECTURE RTL OF BETA_TIMES_VREF_ADJUST_lpm_constant_n29 IS
+ ARCHITECTURE RTL OF BETA_TIMES_VREF_ADJUST_lpm_constant_b69 IS
 
  BEGIN
 
-	result <= "00111010100000000000000000000000";
+	result <= "00111100001001010111111010110101";
 
- END RTL; --BETA_TIMES_VREF_ADJUST_lpm_constant_n29
+ END RTL; --BETA_TIMES_VREF_ADJUST_lpm_constant_b69
 --VALID FILE
 
 
@@ -74,7 +74,7 @@ ARCHITECTURE RTL OF beta_times_vref_adjust IS
 
 
 
-	COMPONENT BETA_TIMES_VREF_ADJUST_lpm_constant_n29
+	COMPONENT BETA_TIMES_VREF_ADJUST_lpm_constant_b69
 	PORT (
 			result	: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 	);
@@ -83,7 +83,7 @@ ARCHITECTURE RTL OF beta_times_vref_adjust IS
 BEGIN
 	result    <= sub_wire0(31 DOWNTO 0);
 
-	BETA_TIMES_VREF_ADJUST_lpm_constant_n29_component : BETA_TIMES_VREF_ADJUST_lpm_constant_n29
+	BETA_TIMES_VREF_ADJUST_lpm_constant_b69_component : BETA_TIMES_VREF_ADJUST_lpm_constant_b69
 	PORT MAP (
 		result => sub_wire0
 	);
@@ -100,11 +100,11 @@ END RTL;
 -- Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 -- Retrieval info: PRIVATE: Radix NUMERIC "2"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
--- Retrieval info: PRIVATE: Value NUMERIC "981467136"
+-- Retrieval info: PRIVATE: Value NUMERIC "1009090229"
 -- Retrieval info: PRIVATE: nBit NUMERIC "32"
 -- Retrieval info: PRIVATE: new_diagram STRING "1"
 -- Retrieval info: LIBRARY: lpm lpm.lpm_components.all
--- Retrieval info: CONSTANT: LPM_CVALUE NUMERIC "981467136"
+-- Retrieval info: CONSTANT: LPM_CVALUE NUMERIC "1009090229"
 -- Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_CONSTANT"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "32"

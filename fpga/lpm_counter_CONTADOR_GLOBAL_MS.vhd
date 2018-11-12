@@ -42,6 +42,7 @@ USE lpm.all;
 ENTITY lpm_counter_CONTADOR_GLOBAL_MS IS
 	PORT
 	(
+		aclr		: IN STD_LOGIC ;
 		clock		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 	);
@@ -62,6 +63,7 @@ ARCHITECTURE SYN OF lpm_counter_contador_global_ms IS
 		lpm_width		: NATURAL
 	);
 	PORT (
+			aclr	: IN STD_LOGIC ;
 			clock	: IN STD_LOGIC ;
 			q	: OUT STD_LOGIC_VECTOR (31 DOWNTO 0)
 	);
@@ -78,6 +80,7 @@ BEGIN
 		lpm_width => 32
 	)
 	PORT MAP (
+		aclr => aclr,
 		clock => clock,
 		q => sub_wire0
 	);
@@ -89,7 +92,7 @@ END SYN;
 -- ============================================================
 -- CNX file retrieval info
 -- ============================================================
--- Retrieval info: PRIVATE: ACLR NUMERIC "0"
+-- Retrieval info: PRIVATE: ACLR NUMERIC "1"
 -- Retrieval info: PRIVATE: ALOAD NUMERIC "0"
 -- Retrieval info: PRIVATE: ASET NUMERIC "0"
 -- Retrieval info: PRIVATE: ASET_ALL1 NUMERIC "1"
@@ -113,8 +116,10 @@ END SYN;
 -- Retrieval info: CONSTANT: LPM_PORT_UPDOWN STRING "PORT_UNUSED"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COUNTER"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "32"
+-- Retrieval info: USED_PORT: aclr 0 0 0 0 INPUT NODEFVAL "aclr"
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
 -- Retrieval info: USED_PORT: q 0 0 32 0 OUTPUT NODEFVAL "q[31..0]"
+-- Retrieval info: CONNECT: @aclr 0 0 0 0 aclr 0 0 0 0
 -- Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: CONNECT: q 0 0 32 0 @q 0 0 32 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_counter_CONTADOR_GLOBAL_MS.vhd TRUE
