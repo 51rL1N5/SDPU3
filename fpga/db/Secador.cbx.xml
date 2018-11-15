@@ -34,9 +34,10 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|lpm_counter_SPI_STATE_RECEIVE:inst7|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_o2i.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_adder_X:inst27|altfp_adder_X_altfp_add_sub_u1j:altfp_adder_X_altfp_add_sub_u1j_component|lpm_add_sub:man_2comp_res_upper1" CBX_FILE_NAME="add_sub_m6l.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_mult_ADJUSTING_DATA:inst35|altfp_mult_ADJUSTING_DATA_altfp_mult_njn:altfp_mult_ADJUSTING_DATA_altfp_mult_njn_component|lpm_add_sub:man_round_adder" CBX_FILE_NAME="add_sub_cmg.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|lpm_compare_PWM_I:inst50|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_dag.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|lpm_compare_PWM_I:inst50|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_iag.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_adder_X:inst26|altfp_adder_X_altfp_add_sub_u1j:altfp_adder_X_altfp_add_sub_u1j_component|lpm_add_sub:man_res_rounding_add_sub_lower" CBX_FILE_NAME="add_sub_8ng.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_mult_ADJUSTING_DATA:inst25|altfp_mult_ADJUSTING_DATA_altfp_mult_njn:altfp_mult_ADJUSTING_DATA_altfp_mult_njn_component|lpm_add_sub:exp_add_adder" CBX_FILE_NAME="add_sub_b9j.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|lpm_counter_SPI_NAO_VAI_DAR_NAO:inst57|lpm_counter:LPM_COUNTER_component" CBX_FILE_NAME="cntr_q2i.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_adder_X:inst27|altfp_adder_X_altfp_add_sub_u1j:altfp_adder_X_altfp_add_sub_u1j_component|lpm_add_sub:add_sub1" CBX_FILE_NAME="add_sub_3mj.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_convert_FP_TO_INT:inst34|altfp_convert_FP_TO_INT_altfp_convert_bqm:altfp_convert_FP_TO_INT_altfp_convert_bqm_component|lpm_add_sub:add_sub4" CBX_FILE_NAME="add_sub_9ui.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_convert_INT_TO_FP:inst11|altfp_convert_INT_TO_FP_altfp_convert_bqm:altfp_convert_INT_TO_FP_altfp_convert_bqm_component|lpm_compare:cmpr4" CBX_FILE_NAME="cmpr_vth.tdf"/>
@@ -50,7 +51,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_convert_FP_TO_INT:inst34|altfp_convert_FP_TO_INT_altfp_convert_bqm:altfp_convert_FP_TO_INT_altfp_convert_bqm_component|lpm_add_sub:add_sub7" CBX_FILE_NAME="add_sub_3cj.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_mult_ADJUSTING_DATA:inst23|altfp_mult_ADJUSTING_DATA_altfp_mult_njn:altfp_mult_ADJUSTING_DATA_altfp_mult_njn_component|lpm_add_sub:exp_adj_adder" CBX_FILE_NAME="add_sub_01h.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_mult_ADJUSTING_DATA:inst23|altfp_mult_ADJUSTING_DATA_altfp_mult_njn:altfp_mult_ADJUSTING_DATA_altfp_mult_njn_component|lpm_add_sub:exp_bias_subtr" CBX_FILE_NAME="add_sub_egg.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|lpm_compare_PWM_I:inst37|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_dag.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|lpm_compare_PWM_I:inst37|lpm_compare:LPM_COMPARE_component" CBX_FILE_NAME="cmpr_iag.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_adder_X:inst27|altfp_adder_X_altfp_add_sub_u1j:altfp_adder_X_altfp_add_sub_u1j_component|lpm_add_sub:add_sub5" CBX_FILE_NAME="add_sub_2lj.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_adder_X:inst27|altfp_adder_X_altfp_add_sub_u1j:altfp_adder_X_altfp_add_sub_u1j_component|lpm_add_sub:man_res_rounding_add_sub_upper1" CBX_FILE_NAME="add_sub_hvg.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|Secador|altfp_convert_FP_TO_INT:inst34|altfp_convert_FP_TO_INT_altfp_convert_bqm:altfp_convert_FP_TO_INT_altfp_convert_bqm_component|lpm_add_sub:add_sub8" CBX_FILE_NAME="add_sub_vbj.tdf"/>

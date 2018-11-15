@@ -17,7 +17,6 @@ component lpm_shiftreg_SPI_RECEIVE
 	PORT
 	(
 		clock		: IN STD_LOGIC ;
-		enable		: IN STD_LOGIC ;
 		shiftin		: IN STD_LOGIC ;
 		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
 	);

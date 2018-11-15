@@ -44,8 +44,9 @@ ENTITY lpm_shiftreg_SPI_2 IS
 	(
 		clock		: IN STD_LOGIC ;
 		data		: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
-		enable		: IN STD_LOGIC ;
 		load		: IN STD_LOGIC ;
+		shiftin		: IN STD_LOGIC ;
+		q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
 		shiftout		: OUT STD_LOGIC 
 	);
 END lpm_shiftreg_SPI_2;
@@ -54,6 +55,7 @@ END lpm_shiftreg_SPI_2;
 ARCHITECTURE SYN OF lpm_shiftreg_spi_2 IS
 
 	SIGNAL sub_wire0	: STD_LOGIC ;
+	SIGNAL sub_wire1	: STD_LOGIC_VECTOR (7 DOWNTO 0);
 
 
 
@@ -68,12 +70,14 @@ ARCHITECTURE SYN OF lpm_shiftreg_spi_2 IS
 			data	: IN STD_LOGIC_VECTOR (7 DOWNTO 0);
 			load	: IN STD_LOGIC ;
 			shiftout	: OUT STD_LOGIC ;
-			enable	: IN STD_LOGIC 
+			q	: OUT STD_LOGIC_VECTOR (7 DOWNTO 0);
+			shiftin	: IN STD_LOGIC 
 	);
 	END COMPONENT;
 
 BEGIN
 	shiftout    <= sub_wire0;
+	q    <= sub_wire1(7 DOWNTO 0);
 
 	LPM_SHIFTREG_component : LPM_SHIFTREG
 	GENERIC MAP (
@@ -85,8 +89,9 @@ BEGIN
 		clock => clock,
 		data => data,
 		load => load,
-		enable => enable,
-		shiftout => sub_wire0
+		shiftin => shiftin,
+		shiftout => sub_wire0,
+		q => sub_wire1
 	);
 
 
@@ -100,17 +105,17 @@ END SYN;
 -- Retrieval info: PRIVATE: ALOAD NUMERIC "0"
 -- Retrieval info: PRIVATE: ASET NUMERIC "0"
 -- Retrieval info: PRIVATE: ASET_ALL1 NUMERIC "1"
--- Retrieval info: PRIVATE: CLK_EN NUMERIC "1"
+-- Retrieval info: PRIVATE: CLK_EN NUMERIC "0"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 -- Retrieval info: PRIVATE: LeftShift NUMERIC "1"
 -- Retrieval info: PRIVATE: ParallelDataInput NUMERIC "1"
--- Retrieval info: PRIVATE: Q_OUT NUMERIC "0"
+-- Retrieval info: PRIVATE: Q_OUT NUMERIC "1"
 -- Retrieval info: PRIVATE: SCLR NUMERIC "0"
 -- Retrieval info: PRIVATE: SLOAD NUMERIC "1"
 -- Retrieval info: PRIVATE: SSET NUMERIC "0"
 -- Retrieval info: PRIVATE: SSET_ALL1 NUMERIC "1"
 -- Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
--- Retrieval info: PRIVATE: SerialShiftInput NUMERIC "0"
+-- Retrieval info: PRIVATE: SerialShiftInput NUMERIC "1"
 -- Retrieval info: PRIVATE: SerialShiftOutput NUMERIC "1"
 -- Retrieval info: PRIVATE: nBit NUMERIC "8"
 -- Retrieval info: PRIVATE: new_diagram STRING "1"
@@ -120,13 +125,15 @@ END SYN;
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "8"
 -- Retrieval info: USED_PORT: clock 0 0 0 0 INPUT NODEFVAL "clock"
 -- Retrieval info: USED_PORT: data 0 0 8 0 INPUT NODEFVAL "data[7..0]"
--- Retrieval info: USED_PORT: enable 0 0 0 0 INPUT NODEFVAL "enable"
 -- Retrieval info: USED_PORT: load 0 0 0 0 INPUT NODEFVAL "load"
+-- Retrieval info: USED_PORT: q 0 0 8 0 OUTPUT NODEFVAL "q[7..0]"
+-- Retrieval info: USED_PORT: shiftin 0 0 0 0 INPUT NODEFVAL "shiftin"
 -- Retrieval info: USED_PORT: shiftout 0 0 0 0 OUTPUT NODEFVAL "shiftout"
 -- Retrieval info: CONNECT: @clock 0 0 0 0 clock 0 0 0 0
 -- Retrieval info: CONNECT: @data 0 0 8 0 data 0 0 8 0
--- Retrieval info: CONNECT: @enable 0 0 0 0 enable 0 0 0 0
 -- Retrieval info: CONNECT: @load 0 0 0 0 load 0 0 0 0
+-- Retrieval info: CONNECT: @shiftin 0 0 0 0 shiftin 0 0 0 0
+-- Retrieval info: CONNECT: q 0 0 8 0 @q 0 0 8 0
 -- Retrieval info: CONNECT: shiftout 0 0 0 0 @shiftout 0 0 0 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_shiftreg_SPI_2.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_shiftreg_SPI_2.inc FALSE

@@ -44,7 +44,7 @@ ENTITY lpm_compare_PWM_I IS
 	(
 		dataa		: IN STD_LOGIC_VECTOR (8 DOWNTO 0);
 		datab		: IN STD_LOGIC_VECTOR (8 DOWNTO 0);
-		agb		: OUT STD_LOGIC 
+		alb		: OUT STD_LOGIC 
 	);
 END lpm_compare_PWM_I;
 
@@ -62,14 +62,14 @@ ARCHITECTURE SYN OF lpm_compare_pwm_i IS
 		lpm_width		: NATURAL
 	);
 	PORT (
-			agb	: OUT STD_LOGIC ;
+			alb	: OUT STD_LOGIC ;
 			dataa	: IN STD_LOGIC_VECTOR (8 DOWNTO 0);
 			datab	: IN STD_LOGIC_VECTOR (8 DOWNTO 0)
 	);
 	END COMPONENT;
 
 BEGIN
-	agb    <= sub_wire0;
+	alb    <= sub_wire0;
 
 	LPM_COMPARE_component : LPM_COMPARE
 	GENERIC MAP (
@@ -80,7 +80,7 @@ BEGIN
 	PORT MAP (
 		dataa => dataa,
 		datab => datab,
-		agb => sub_wire0
+		alb => sub_wire0
 	);
 
 
@@ -92,9 +92,9 @@ END SYN;
 -- ============================================================
 -- Retrieval info: PRIVATE: AeqB NUMERIC "0"
 -- Retrieval info: PRIVATE: AgeB NUMERIC "0"
--- Retrieval info: PRIVATE: AgtB NUMERIC "1"
+-- Retrieval info: PRIVATE: AgtB NUMERIC "0"
 -- Retrieval info: PRIVATE: AleB NUMERIC "0"
--- Retrieval info: PRIVATE: AltB NUMERIC "0"
+-- Retrieval info: PRIVATE: AltB NUMERIC "1"
 -- Retrieval info: PRIVATE: AneB NUMERIC "0"
 -- Retrieval info: PRIVATE: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 -- Retrieval info: PRIVATE: LPM_PIPELINE NUMERIC "0"
@@ -112,12 +112,12 @@ END SYN;
 -- Retrieval info: CONSTANT: LPM_REPRESENTATION STRING "SIGNED"
 -- Retrieval info: CONSTANT: LPM_TYPE STRING "LPM_COMPARE"
 -- Retrieval info: CONSTANT: LPM_WIDTH NUMERIC "9"
--- Retrieval info: USED_PORT: agb 0 0 0 0 OUTPUT NODEFVAL "agb"
+-- Retrieval info: USED_PORT: alb 0 0 0 0 OUTPUT NODEFVAL "alb"
 -- Retrieval info: USED_PORT: dataa 0 0 9 0 INPUT NODEFVAL "dataa[8..0]"
 -- Retrieval info: USED_PORT: datab 0 0 9 0 INPUT NODEFVAL "datab[8..0]"
 -- Retrieval info: CONNECT: @dataa 0 0 9 0 dataa 0 0 9 0
 -- Retrieval info: CONNECT: @datab 0 0 9 0 datab 0 0 9 0
--- Retrieval info: CONNECT: agb 0 0 0 0 @agb 0 0 0 0
+-- Retrieval info: CONNECT: alb 0 0 0 0 @alb 0 0 0 0
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare_PWM_I.vhd TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare_PWM_I.inc FALSE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL lpm_compare_PWM_I.cmp TRUE

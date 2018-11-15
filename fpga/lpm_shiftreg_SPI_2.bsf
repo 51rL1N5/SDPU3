@@ -47,16 +47,23 @@ applicable agreement for further details.
 	(port
 		(pt 0 96)
 		(input)
-		(text "enable" (rect 0 0 40 12)(font "Arial" (font_size 8)))
-		(text "enable" (rect 20 90 53 101)(font "Arial" (font_size 8)))
+		(text "shiftin" (rect 0 0 35 12)(font "Arial" (font_size 8)))
+		(text "shiftin" (rect 20 90 49 101)(font "Arial" (font_size 8)))
 		(line (pt 0 96)(pt 16 96))
 	)
 	(port
-		(pt 144 64)
+		(pt 144 56)
 		(output)
 		(text "shiftout" (rect 0 0 43 12)(font "Arial" (font_size 8)))
-		(text "shiftout" (rect 90 58 126 69)(font "Arial" (font_size 8)))
-		(line (pt 144 64)(pt 128 64))
+		(text "shiftout" (rect 90 50 126 61)(font "Arial" (font_size 8)))
+		(line (pt 144 56)(pt 128 56))
+	)
+	(port
+		(pt 144 72)
+		(output)
+		(text "q[7..0]" (rect 0 0 37 12)(font "Arial" (font_size 8)))
+		(text "q[7..0]" (rect 94 66 125 77)(font "Arial" (font_size 8)))
+		(line (pt 144 72)(pt 128 72)(line_width 3))
 	)
 	(drawing
 		(text "left shift" (rect 97 19 229 47)(font "Arial" ))
