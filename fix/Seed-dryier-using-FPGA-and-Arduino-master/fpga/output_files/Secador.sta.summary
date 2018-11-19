@@ -1,0 +1,93 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLK'
+Slack : -10.001
+TNS   : -12862.267
+
+Type  : Slow Model Setup 'lpm_counter_SPI_STATE_RECEIVE:inst7|lpm_counter:LPM_COUNTER_component|cntr_o2i:auto_generated|safe_q[1]'
+Slack : -1.553
+TNS   : -45.934
+
+Type  : Slow Model Setup 'FINISH'
+Slack : -0.436
+TNS   : -1.373
+
+Type  : Slow Model Hold 'FINISH'
+Slack : -2.710
+TNS   : -2.726
+
+Type  : Slow Model Hold 'CLK'
+Slack : -0.390
+TNS   : -2.620
+
+Type  : Slow Model Hold 'lpm_counter_SPI_STATE_RECEIVE:inst7|lpm_counter:LPM_COUNTER_component|cntr_o2i:auto_generated|safe_q[1]'
+Slack : 1.466
+TNS   : 0.000
+
+Type  : Slow Model Recovery 'FINISH'
+Slack : 1.115
+TNS   : 0.000
+
+Type  : Slow Model Removal 'FINISH'
+Slack : -0.845
+TNS   : -1.690
+
+Type  : Slow Model Minimum Pulse Width 'CLK'
+Slack : -1.627
+TNS   : -8418.604
+
+Type  : Slow Model Minimum Pulse Width 'FINISH'
+Slack : -1.222
+TNS   : -11.222
+
+Type  : Slow Model Minimum Pulse Width 'lpm_counter_SPI_STATE_RECEIVE:inst7|lpm_counter:LPM_COUNTER_component|cntr_o2i:auto_generated|safe_q[1]'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'CLK'
+Slack : -3.855
+TNS   : -4106.047
+
+Type  : Fast Model Setup 'lpm_counter_SPI_STATE_RECEIVE:inst7|lpm_counter:LPM_COUNTER_component|cntr_o2i:auto_generated|safe_q[1]'
+Slack : -0.585
+TNS   : -17.687
+
+Type  : Fast Model Setup 'FINISH'
+Slack : 0.376
+TNS   : 0.000
+
+Type  : Fast Model Hold 'FINISH'
+Slack : -1.485
+TNS   : -2.375
+
+Type  : Fast Model Hold 'CLK'
+Slack : -0.372
+TNS   : -2.874
+
+Type  : Fast Model Hold 'lpm_counter_SPI_STATE_RECEIVE:inst7|lpm_counter:LPM_COUNTER_component|cntr_o2i:auto_generated|safe_q[1]'
+Slack : 1.118
+TNS   : 0.000
+
+Type  : Fast Model Recovery 'FINISH'
+Slack : 0.633
+TNS   : 0.000
+
+Type  : Fast Model Removal 'FINISH'
+Slack : -0.253
+TNS   : -0.506
+
+Type  : Fast Model Minimum Pulse Width 'CLK'
+Slack : -1.627
+TNS   : -8462.188
+
+Type  : Fast Model Minimum Pulse Width 'FINISH'
+Slack : -1.222
+TNS   : -11.222
+
+Type  : Fast Model Minimum Pulse Width 'lpm_counter_SPI_STATE_RECEIVE:inst7|lpm_counter:LPM_COUNTER_component|cntr_o2i:auto_generated|safe_q[1]'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------
