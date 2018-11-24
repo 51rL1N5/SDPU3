@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Aluno\Documents\birl\Seed-dryier-using-FPGA-and-Arduino-master\fpga\simulation\qsim
+vSecador
+Z1 !s100 H?B[TX9zDo@EjmB]P3W5N1
+Z2 I4j<k2>@G=dV`jkADP<Tl01
+Z3 VZkVhEV9c`>Q?2J<]BZYzC2
+Z4 dC:\Users\Aluno\Documents\birl\Seed-dryier-using-FPGA-and-Arduino-master\fpga\simulation\qsim
+Z5 w1542383197
+Z6 8Secador.vo
+Z7 FSecador.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|Secador.vo|
+Z10 o-work work -O0
+Z11 n@secador
+!i10b 1
+!s85 0
+Z12 !s108 1542383198.366000
+Z13 !s107 Secador.vo|
+!s101 -O0
+vSecador_vlg_check_tst
+!i10b 1
+Z14 !s100 WR5IEOf^VL<9W:?SA1SFJ3
+Z15 I:8_f^8:mM[l::Mono^a`30
+Z16 Vg6<dW<=bXaTCJ0BZB;DKO2
+R4
+Z17 w1542383196
+Z18 8Secador.vt
+Z19 FSecador.vt
+L0 67
+R8
+r1
+!s85 0
+31
+Z20 !s108 1542383198.483000
+Z21 !s107 Secador.vt|
+Z22 !s90 -work|work|Secador.vt|
+!s101 -O0
+R10
+Z23 n@secador_vlg_check_tst
+vSecador_vlg_sample_tst
+!i10b 1
+Z24 !s100 FcbQ<W5e^fX64QWeC9<gP1
+Z25 Icmjn@A0K9Ymn5NVU=4c`Y0
+Z26 VCVMC6`@1Ch6^n1Uil6j:02
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@secador_vlg_sample_tst
+vSecador_vlg_vec_tst
+!i10b 1
+Z28 !s100 inXda<6EPTz5@YRKmR[ID3
+Z29 I1lOLL[z67@=IOkbij:OLD0
+Z30 Vi`E?OL1IoR[cd9kBBl;`Z1
+R4
+R17
+R18
+R19
+Z31 L0 162
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z32 n@secador_vlg_vec_tst
