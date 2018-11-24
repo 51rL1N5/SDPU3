@@ -7,19 +7,18 @@
 #define BAUD_PRESCALLER (((F_CPU / (BAUDRATE * 16UL))) - 1)
 
 // Pinos associados aos sensores
-#define DHT_PIN PC0
 #define THERMISTOR PC1   //A1
+#define LUMI_PIN PC0
 
-#define THER_REF 27/510.0
+#define LOAD_PIN PD7
+
 /******************** Funcoes **********************/
 //Leitura dos sensores
-uint8_t readDHT_byte();//funcao auxiliar de readDHT(data[])
-bool readDHT(uint8_t data[]); //Funcao que le do sensor DHT os dados de umidade e temperatura, data[0:1]:umidade, data[1:2]:Temperatura
-uint8_t DHT_readUmidade(); //retorna data[0] direto(se utiliza das funcoes acima)
+
 //faz a leitura do sensor de temperatura associado ao pino THERMISTOR, retorna o valor em graus Celcius
 //mapeados da seguinte forma(0:54 <=> 0:1023)
 uint8_t readTherm();
-
+uint8_t readLumin();
 //Comunicacao USART
 void USART_initialize();
 void USART_transmision(uint8_t data);
@@ -31,121 +30,41 @@ void USART_flush();
 void SPI_MasterInit(void);
 uint8_t SPI_MasterTransmit(uint8_t cData);
 
+
+
 void setup()
 {
-  // Pre-config. para leitura do sensor DHT
-  DDRC |= 1 << DHT_PIN;
-  PORTC|= !(1 << DHT_PIN);      //coloca DHT_PIN para nivel alto
+  DDRD |= (1 << LOAD_PIN);
+  PORTD&= ~(1 << LOAD_PIN);
 
   USART_initialize();
   SPI_MasterInit();
-
-  sei();
 }
 
-volatile bool enable = false;
-volatile uint8_t pwm;
 
 int main()
 {
   uint8_t temp;
-  uint8_t umid;
+  uint8_t lumin;
+  uint8_t pwm;
+
+  setup();
   while(true)
   {
-    if(enable)
-    {
-      umid = readDHT_byte();
-      temp = readTherm();
+     temp = readTherm();
+     lumin= readLumin();
 
-      pwm = SPI_MasterTransmit(temp);
-      SPI_MasterTransmit(umid);
-    }
+     pwm = SPI_MasterTransmit(temp); //manda temp e recebe o ultimo PWM calculado
+     SPI_MasterTransmit(lumin);//envia informacoes o ADC relativo a leitura ADC do sensor de luminosidade
+     pwm = (pwm >> 1) | ((pwm & 0x01) << 7);
+
+     USART_transmision(pwm);//repassa a informacao do pwm via serial USB da placa arduino
   }
 
   return 0;
 }
-/******************INTERRUPCOES******************/
-enum COMMAND{
-  ON  = 0x01,
-  OFF = 0x02,
-  REQ = 0x03,
-};
-
-ISR(USART_RX_vect){
-  uint8_t data = USART_reception();
-  USART_flush();
-
-  switch (data) {
-    case ON:
-      // ligar o sistema
-      enable = true;
-    break;
-    case OFF:
-      //desligar o sistem
-      enable = false;
-    break;
-    case REQ:
-      // RETORNA utimo PWM(%)
-      USART_transmision(pwm);
-    break;
-    default://comando nao reconhecido
-      //ignorar
-     break;
-  }
-}
 
 /****************************IMPLEMENTACOES**********************/
-//Leitura dos sensores
-uint8_t DHT_readUmidade(){
-  uint8_t data[5];
-  readDHT(data);
-  return data[0];
-}
-bool readDHT(uint8_t data[]){
-  uint8_t dht_in = 0;
-  //Pedido de transmissao de dados
-  DDRC |= 1 << DHT_PIN;
-  PORTC&= !(1<<DHT_PIN);
-  _delay_ms(18); //ate 18ms
-  PORTC|= (1<<DHT_PIN);
-  _delay_us(1);
-
-  //Confirmacao do DHT
-  DDRC &= !(1<<DHT_PIN);
-  _delay_us(80); //ate 80us
-  dht_in = PINC & (1<<DHT_PIN);
-  if(dht_in)
-    return false;
-
-  _delay_us(80);//ate 80us
-  dht_in = PINC & (1<<DHT_PIN);
-  if(!dht_in)
-    return false;
-
-  //inicio da transmissao dos dados
-  _delay_us(80);
-  for(uint8_t i = 0; i < 5; i++){
-    data[i] = readDHT_byte();
-  }
-
-  uint8_t checksum = data[0] + data[2];
-
-  if(checksum != data[4])
-    return false;
-
-  return true;
-}
-uint8_t readDHT_byte(){
-  uint8_t data = 0;
-  for(uint8_t i = 0; i < 8; i++){
-    while( !(PINC & (1<<DHT_PIN)));//espera sair da zona LOW
-    _delay_us(30);
-    if( PINC & (1<<DHT_PIN) )//se ler nivel Alto nessa linha, entao o bit eh 1
-      data |= 1 << (7-i);
-    while( PINC & (1<<DHT_PIN) );//espera receber o nivel LOW indicando o proximo bit
-  }
-  return data;
-}
 //Realiza a conversao ADC e retorna o valor em Graus Celcius
 uint8_t readTherm(){
   ADCSRA |= 0b10000111; //divide o clock_ms por 128 (o clock_ms de conversao sera 16Mhz/128)
@@ -154,19 +73,36 @@ uint8_t readTherm(){
   ADMUX  |= 0b00000001; //converte do pino A1
   ADCSRA |= 0b01000000; // inicia a conversao A/D
   while(!(ADCSRA & 0b00010000)); //Aguarda a conversao ser concluida
-  return (int)(ADC*THER_REF) >> 2; //desloca(ignorando os dois bits menos signicativos) para ADC ocupar um byte
+  return ADC >> 2; //desloca(ignorando os dois bits menos signicativos) para ADC ocupar um byte
+}
+
+uint8_t readLumin(){
+  ADCSRA |= 0b10000111; //divide o clock_ms por 128 (o clock_ms de conversao sera 16Mhz/128)
+
+  ADMUX   = 0;
+  ADMUX  |= 0b01000000;//usa o Vcc como ref
+  ADCSRA |= 0b01000000; // inicia a conversao A/D
+  while(!(ADCSRA & 0b00010000)); //Aguarda a conversao ser concluida
+  return ADC >> 2; //desloca(ignorando os dois bits menos signicativos) para ADC ocupar um byte
 }
 
 //Comunicacao SPI
 void SPI_MasterInit(void)
 {
+  PORTB|= 1 << PB2;
   /* Set MOSI and SCK output, all others input */
   DDRB = (1<<DDB3)|(1<<DDB5);
-  /* Enable SPI, Master, set clock rate fck/4 */
-  SPCR = (1<<SPE)|(1<<MSTR);
+  /* Enable SPI, Master, set clock rate fck/128 */
+  SPCR = (1<<SPE)|(1<<MSTR) | (0b00000110);
 }
 uint8_t SPI_MasterTransmit(uint8_t cData)
 {
+  /*procedimento nao pertence ao protocolo SPI, mas foi usado para garantir o sincronismos com a FPGA*/
+  PORTD|= (1 << LOAD_PIN);
+  _delay_us(50);
+  PORTD&= ~(1 << LOAD_PIN);
+  _delay_us(50);
+
   /* Start transmission */
   SPDR = cData;
   /* Wait for transmission complete */
